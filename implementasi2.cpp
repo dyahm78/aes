@@ -102,7 +102,7 @@ void keycore(unsigned char *in,unsigned char i) //fungsi ini digunakan untuk eks
 		in[i] = rcon[in[i]];
 	}
 		
-	//in[0] ^= rcon[i];
+	in[0] ^= rcon[i];
 }
 
 //keyexpand digunakan untuk men-generate key baru untuk setiap round
