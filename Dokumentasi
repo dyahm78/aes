@@ -1,0 +1,36 @@
+Algoritma AES atau Advnaced Encryption System adalah salh satu variasi dari Rijndael (dibaca "Rine Dale") cipher yang merupakan
+algoritma simetris dimana hanya digunakan 1 key untuk enkripsi dan dekripsi. AES memenangkan kompetisi untuk mencari metode enkripsi baru
+yang diselenggarakan oleh National Institue of Standards and Technology pada tahun 2001 dan semenjak itu menjadi algoritma yang banyak 
+digunakan di seluruh dunia.
+
+AES adalah block cipher yang mengenkripsi 128 bit (16 byte) data yang disusun seperti matriks ukuran 4x4. Data yang melebihi ukuran akan
+di bagi menjadi blok - blok (128 bit per blok). Data yang ukurannya bukan kelipatan dari standar, akan di-padding (menambahkan bit 0 
+hingga memenuhi ukuran yang kelipatan daripada standar ukuran blok).
+
+Key yang digunakan pad AES berukuran 128 bit, 192 bit atau 256 bit. Tipa bit tersebut akan menentukan jumlah round atau putaran dalam 
+enkripsi.
+128 bit = 10 putaran
+192 bit = 12 putaran
+256 bit = 14 putaran
+
+Stage dalam enkripsi AES:
+1. Ekspansi Key
+2. Initial Round:
+  - Add Round Key
+3. Rounds:
+  - Sub Bytes
+  - Shift Rows
+  - Mixcolumns
+  - Add Round Key
+4. Final Round:
+  - Sub Bytes
+  - Shift Rows
+  - Add Round Key
+  
+// Masuk kedalam Implementasi
+Implementasi yang dilakukan adalah menerapkan AES dengan 128 bit key.
+
+1. Ekspansi Key
+Di dalam fungsi ini tujuan utamanya adalah mengambil 16 byte kunci lalu mengekspansinya sehingga di dapat key baru untuk setiap perulangan 
+round dalam enkripsi.
+dari 16 byte, 4 byte pertama akan dikenai 3 metode yaitu rotasi, pemetaan kedalam s box dan pemetaan kedalam rcon.
